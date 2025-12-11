@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/**
+ * Guide to New Zealand Brand Styling
+ * 
+ * Dark, premium theme inspired by Tourism NZ visual language.
+ */
+
+:root {
+  --background: #020617;
+  --foreground: #e5e7eb;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-background text-slate-100;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  h1 {
+    @apply text-white font-bold;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white font-bold;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  /**
+   * Brand Hero Overlay
+   * Used over images to ensure text readability
+   */
+  .brand-hero-overlay {
+    @apply bg-gradient-to-t from-black/80 via-black/50 to-transparent;
+  }
+
+  /**
+   * Brand Pill / Badge
+   * Small accent elements for labels and tags
+   */
+  .brand-pill {
+    @apply inline-flex items-center rounded-full bg-brand-primary/20 text-brand-aqua text-xs font-semibold px-3 py-1 tracking-wide;
+  }
+
+  /**
+   * Brand Primary Button
+   * Main call-to-action buttons
+   */
+  .brand-primary-button {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-primary text-white font-semibold px-6 py-3 hover:bg-brand-primaryLight transition duration-200;
+  }
+
+  /**
+   * Brand Secondary Button
+   * Alternative CTAs with aqua/sky accent
+   */
+  .brand-secondary-button {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-brand-aqua text-brand-aqua font-semibold px-6 py-3 hover:bg-brand-aqua/10 transition duration-200;
+  }
+
+  /**
+   * Brand Card
+   * Elevated surface for content sections
+   */
+  .brand-card {
+    @apply bg-brand-surface rounded-xl border border-brand-light/20 shadow-lg;
+  }
+
+  /**
+   * Brand Section
+   * Container with standard padding for page sections
+   */
+  .brand-section {
+    @apply py-16 md:py-24;
+  }
+
+  /**
+   * Brand Container
+   * Standard max-width wrapper
+   */
+  .brand-container {
+    @apply max-w-5xl mx-auto px-4;
+  }
+}
+
+/* Utility: Dark text on light backgrounds */
+.text-dark {
+  @apply text-brand-dark;
+}
+
+/* Utility: Light text (default for dark theme) */
+.text-light {
+  @apply text-brand-light;
+}
